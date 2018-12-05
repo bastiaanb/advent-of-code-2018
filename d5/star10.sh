@@ -1,10 +1,12 @@
 #!/bin/bash
 
+LC_ALL=C
+
 collapse() {
   input=$1
   polymer=""
   for ((i=0; i < ${#input}; i++)); do
-    echo $i
+#    echo $i
     c=${input:$i:1}
     if [[ -z $polymer ]]; then
       polymer=$c
@@ -22,4 +24,8 @@ collapse() {
 }
 
 read in
-collapse $in
+
+for c in a b c d e f g h i j k l m n o p q r s t u v w x y z; do
+  echo -n "$c "
+  collapse ${in//[$c${c^}]}
+done
