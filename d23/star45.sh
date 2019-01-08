@@ -29,7 +29,7 @@ count_drones() {
     ((dy=${y[$j]} - ${y[$1]}))
     ((dz=${z[$j]} - ${z[$1]}))
     ((d=${dx#-} + ${dy#-} + ${dz#-}))
-    if [[ $d -le $2 ]]; then
+    if [[ $d -lt $2 ]]; then
       ((c++))
     fi
   done
