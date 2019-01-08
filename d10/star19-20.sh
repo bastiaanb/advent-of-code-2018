@@ -18,7 +18,7 @@ read_input() {
 
 find_best() {
   # educated guess on bounds
-  for ((n=10000; n < 11000; n++)); do
+  for ((n=10620; n < 10640; n++)); do
     minx=1000000
     miny=1000000
     maxx=-1000000
@@ -35,7 +35,7 @@ find_best() {
   done | sort -n -k 4 | head -1
 }
 
-read_input
+read_input < input.txt
 read n minx miny w h <<< $(find_best)
 
 clear
